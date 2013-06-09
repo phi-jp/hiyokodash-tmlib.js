@@ -22,6 +22,10 @@ var ASSETS = {
     "hiyoko": "img/hiyoko.png",
     "karasu": "img/karasu.png",
     "bg": "img/bg.png",
+
+    "flySE": "se/fly.mp3",
+
+    "mainBGM": "bgm/main-bgm.mp3",
 };
 
 
@@ -54,6 +58,9 @@ tm.define("GameScene", {
 
     init: function() {
         this.superInit();
+
+        var bgm = tm.asset.AssetManager.get("mainBGM");
+        bgm.setVolume(0.5).setLoop(true).play();
 
         this.bg = Background().addChildTo(this);
         this.bg.x = 0;
@@ -115,6 +122,9 @@ tm.define("Player", {
 
     fly: function() {
         this.vy = -16;
+        var se = tm.asset.AssetManager.get("flySE").clone();
+        se.volume = 1;
+        se.play();
     }
 });
 
