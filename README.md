@@ -1,4 +1,4 @@
 hiyokodash-tmlib.js
 ===================
 
-tmlib.js tutorial game
+ひよこダッシュ - tmlib.js tutorail sample
